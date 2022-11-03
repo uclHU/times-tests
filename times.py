@@ -17,10 +17,9 @@ def compute_overlap_time(range1, range2):
         for start2, end2 in range2:
             if end1 <= start2 or end2 <= start1:
                 continue
-            if start2 < end1 or start1 < end2:
-                low = max(start1, start2)
-                high = min(end1, end2)
-                overlap_time.append((low, high))
+            low = max(start1, start2)
+            high = min(end1, end2)
+            overlap_time.append((low, high))
     return overlap_time
 
 if __name__ == "__main__":
